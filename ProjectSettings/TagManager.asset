@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - grapplePlatform
+  - fly
   layers:
   - Default
   - TransparentFX

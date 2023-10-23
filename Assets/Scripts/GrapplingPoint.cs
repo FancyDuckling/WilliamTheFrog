@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpperPlatform : MonoBehaviour
+public class GrapplingPoint : MonoBehaviour
 {
     // ref till vår spelares script
     private GameObject player;
     private PlayerMovement playerScript;
 
     //ref till oss själva 
-    private UpperPlatform upperPlatform;
+    private GrapplingPoint upperPlatform;
 
     // Start is called before the first frame update
     void Start()

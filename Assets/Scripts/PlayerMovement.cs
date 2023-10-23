@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -25,7 +26,8 @@ public class PlayerMovement : MonoBehaviour
     //Grappling hook Platform
     private LineRenderer lineRend;
     private DistanceJoint2D distJoint;
-    private UpperPlatform selectedUpperPlatform;
+    private GrapplingPoint selectedUpperPlatform;
+    private float catchFlySpeed = 20;
 
     
 
@@ -131,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         return transform.position;
     }
 
-    public void Grappling(UpperPlatform upperPlatform)
+    public void Grappling(GrapplingPoint upperPlatform)
     {
         selectedUpperPlatform = upperPlatform;
     }
@@ -167,15 +169,30 @@ public class PlayerMovement : MonoBehaviour
             lineRend.SetPosition(0,transform.position);
             lineRend.SetPosition(1, selectedUpperPlatform.transform.position);
 
-            //Player gets transported towards the upper platform
-            // Calculate the desired distance from the platform
-            float desiredDistance = Vector2.Distance(transform.position, selectedUpperPlatform.transform.position);
+            //test
+            // Check if the selected object has the "fly" tag
+            if (selectedUpperPlatform.CompareTag("fly"))
+            {
+                // Move the object towards the player
+                // Calculate the direction from the object to the player
+                Vector3 direction = (transform.position - selectedUpperPlatform.transform.position).normalized;
 
-            // You can use Mathf.Lerp to smoothly move the player to the desired distance
-            Vector3 targetPosition = Vector3.Lerp(transform.position, selectedUpperPlatform.transform.position, Time.deltaTime);
+                // Set the object's position to move towards the player
+                float speed = catchFlySpeed;
+               
 
-            // Update the player's position to the target position
-            transform.position = targetPosition;
+                selectedUpperPlatform.transform.position += direction * speed * Time.deltaTime;
+
+                
+            }
+            else
+            {
+                // Move the player towards the object
+                float desiredDistance = Vector2.Distance(transform.position, selectedUpperPlatform.transform.position);
+                Vector3 targetPosition = Vector3.Lerp(transform.position, selectedUpperPlatform.transform.position, Time.deltaTime);
+                transform.position = targetPosition;
+            }
+
         }
         
     }
