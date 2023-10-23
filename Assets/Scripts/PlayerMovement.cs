@@ -22,10 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb2D; //Ref to our rigidbody
 
-    //Grappling hook
+    //Grappling hook Platform
     private LineRenderer lineRend;
     private DistanceJoint2D distJoint;
     private UpperPlatform selectedUpperPlatform;
+
+    
 
     private void Start()
     {
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         lineRend.enabled = false;
         distJoint.enabled = false;
         selectedUpperPlatform = null;
+        
 
         //Calculate player size based on our colliders, lenght of raycast
         var collider = GetComponent<Collider2D>();
@@ -55,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
         GravityAdjust(); //adjusts gravity
 
-        GrapplingBehaviour();
+        GrapplingBehaviourPlatform(); //platform grapple
+ 
 
     }
 
@@ -135,9 +139,11 @@ public class PlayerMovement : MonoBehaviour
     public void StopGrappling()
     {
         selectedUpperPlatform = null;
+        
     }
 
-    public void GrapplingBehaviour()
+
+    public void GrapplingBehaviourPlatform()
     {
         //om vi inte grapplar gör inget
         if (selectedUpperPlatform == null)
@@ -171,12 +177,10 @@ public class PlayerMovement : MonoBehaviour
             // Update the player's position to the target position
             transform.position = targetPosition;
         }
-
-        
-        
-
         
     }
+
+    
 }
 
 
