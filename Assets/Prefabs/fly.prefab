@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 8562765867080083455}
   - component: {fileID: 3178429657204778144}
   - component: {fileID: -6609488436849375406}
+  - component: {fileID: -5145526691772490498}
+  - component: {fileID: 5287747962816088903}
   m_Layer: 0
   m_Name: fly
-  m_TagString: Untagged
+  m_TagString: fly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 0
+  isBobbingBig: 1
+  isBobbingSmall: 1
 --- !u!58 &-6609488436849375406
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +138,42 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999994
+--- !u!114 &-5145526691772490498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652236404558515118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e714b696a36a34490d0d186bf82753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &5287747962816088903
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652236404558515118}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
