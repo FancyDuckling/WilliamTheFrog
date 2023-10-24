@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     
 
+
     private void Start()
     {
         //Change project setting for raycast since they start inside colliders
@@ -86,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
             var velocity = rb2D.velocity;
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
+
+            
         }
 
         if (Input.GetButtonUp("Jump") && rb2D.velocity.y > 0)
