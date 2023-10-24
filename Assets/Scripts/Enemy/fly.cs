@@ -5,6 +5,8 @@ using UnityEngine;
 public class fly : MonoBehaviour
 {
     public bool isMoving = true;
+    public bool isBobbingBig = true;
+    public bool isBobbingSmall = true;
     // Update is called once per frame
     void Update()
     {
@@ -13,10 +15,13 @@ public class fly : MonoBehaviour
             BackAndForth();
 
         }
-        else
+        else if (isBobbingBig)
         {
-            Bobbing();
-
+            BobbingBig();
+        }
+        else if (isBobbingSmall)
+        {
+            IsBobbingSmall();
         }
     }
 
@@ -26,9 +31,15 @@ public class fly : MonoBehaviour
         float oscillationY = transform.position.y + Mathf.Sin(Time.time + 0.3f) * 0.001f;
         transform.position = new Vector3(oscillationX, oscillationY, transform.position.z);
     }
-    private void Bobbing()
+    private void BobbingBig()
     {
         float oscillationY = transform.position.y + Mathf.Sin(Time.time + 10f) * 0.0005f;
+        transform.position = new Vector3(transform.position.x, oscillationY, transform.position.z);
+    }
+
+    private void IsBobbingSmall()
+    {
+        float oscillationY = transform.position.y + Mathf.Sin(Time.time + 10f) * 0.0001f;
         transform.position = new Vector3(transform.position.x, oscillationY, transform.position.z);
     }
 }
