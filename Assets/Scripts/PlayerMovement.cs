@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ParticleSystem watersplash;
     [Header("Movement")]
     public float maxSpeed = 5; //Our max speed
     public float acceleration = 20; //How fast we accelerate
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpPower = 8; //How strong our jump is
     public float groundCheckDistance = 0.1f; //how far outsie our character we should raycast
+    
 
     bool onGround = true; //checks if we are on the ground
     float groundCheckLenght; //Length of the raycast
@@ -89,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             var velocity = rb2D.velocity;
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
-
+            createSplash();
             
         }
 
@@ -106,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
         //Restet our counter if we are on the ground.
         if (onGround)
             currentJumps = 0;
+            
+
     }
 
     private void HorizontalMovement()
@@ -232,6 +236,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
         
+    }
+    void createSplash()
+    {
+        watersplash.Play();
     }
 
     

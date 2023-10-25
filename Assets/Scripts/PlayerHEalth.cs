@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private static float health = 3;
-    public static Image[] heartImage;
+    private float health = 3;
+    public Image[] heartImage;
     public bool canTakeDamage = true;
+    public Transform respawnPoint;
 
     private void Start()
     {
+        
        // UpdateHealth();
     }
 
@@ -37,8 +39,8 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine("InvincibilityTime");
         StartCoroutine("FreeazeFrames");
         health--;
-        
         UpdateHealth();
+        Invoke("RespawnPlayer", 0.3f);
       
         if (health == 0)
         {
@@ -46,6 +48,11 @@ public class PlayerHealth : MonoBehaviour
           
         }
 
+    }
+
+    void RespawnPlayer()
+    {
+        transform.position = respawnPoint.position;
     }
     
     public void UpdateHealth()
@@ -77,12 +84,6 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
 
-    }
-
-    IEnumerator LoadLevel()
-    {
-        yield return new WaitForSecondsRealtime(0.2f);
-        
     }
 
 }
