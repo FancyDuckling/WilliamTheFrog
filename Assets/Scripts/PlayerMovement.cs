@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
     private GrapplingPoint selectedUpperPlatform;
     private float catchFlySpeed = 20;
 
-    
+    //walk animation
+    public Animator walkAnimation;
+
 
 
     private void Start()
@@ -111,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
 
+
         // Flip the character if moving to the left
         if (x < 0)
         {
@@ -121,6 +124,18 @@ public class PlayerMovement : MonoBehaviour
         else if (x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (x != 0)
+        {
+            // Player is moving horizontally
+            velocityX += x * acceleration * Time.deltaTime;
+            walkAnimation.SetBool("Walking", true); // Set the IsMoving parameter to true
+        }
+        else
+        {
+            // Player is not moving
+            walkAnimation.SetBool("Walking", false); // Set the IsMoving parameter to false
         }
 
         //add our input to our velocity

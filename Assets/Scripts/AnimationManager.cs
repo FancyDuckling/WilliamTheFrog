@@ -22,9 +22,12 @@ public class AnimationManager : MonoBehaviour
         {
             frogStateAnimation.SetTrigger("OpenMouth");
         }
+        
         else
         {
             frogStateAnimation.SetTrigger("Idle"); // Trigger IdleFrog animation
         }
+
+        
     }
 }
