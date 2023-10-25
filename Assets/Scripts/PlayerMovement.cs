@@ -111,6 +111,18 @@ public class PlayerMovement : MonoBehaviour
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
 
+        // Flip the character if moving to the left
+        if (x < 0)
+        {
+            // Set the local scale to flip the character horizontally
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        // Reset the character's scale when moving right
+        else if (x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
         //add our input to our velocity
         //This provides accelleration +10m/s/s
         velocityX += x * acceleration * Time.deltaTime;

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Art/Platform/Spring/Tree middle.png.meta
+guid: fdae245abc8bcb64fa61d8be382185f8
+========
 guid: 0d5797d91c8a5ec499390f04ff6425cd
+>>>>>>>> 0c77c6bea415bfe43d29d48eb9ea66ede2921a30:Assets/Art/5.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
