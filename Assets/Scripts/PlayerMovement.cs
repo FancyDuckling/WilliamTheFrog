@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ParticleSystem watersplash;
     [Header("Movement")]
     public float maxSpeed = 5; //Our max speed
     public float acceleration = 20; //How fast we accelerate
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump")]
     public float jumpPower = 8; //How strong our jump is
     public float groundCheckDistance = 0.1f; //how far outsie our character we should raycast
+    
 
     bool onGround = true; //checks if we are on the ground
     float groundCheckLenght; //Length of the raycast
@@ -29,7 +31,9 @@ public class PlayerMovement : MonoBehaviour
     private GrapplingPoint selectedUpperPlatform;
     private float catchFlySpeed = 20;
 
-    
+    //walk animation
+    public Animator walkAnimation;
+
 
 
     private void Start()
@@ -87,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             var velocity = rb2D.velocity;
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
-
+            createSplash();
             
         }
 
@@ -104,12 +108,39 @@ public class PlayerMovement : MonoBehaviour
         //Restet our counter if we are on the ground.
         if (onGround)
             currentJumps = 0;
+            
+
     }
 
     private void HorizontalMovement()
     {
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
+
+
+        // Flip the character if moving to the left
+        if (x < 0)
+        {
+            // Set the local scale to flip the character horizontally
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        // Reset the character's scale when moving right
+        else if (x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        if (x != 0)
+        {
+            // Player is moving horizontally
+            velocityX += x * acceleration * Time.deltaTime;
+            walkAnimation.SetBool("Walking", true); // Set the IsMoving parameter to true
+        }
+        else
+        {
+            // Player is not moving
+            walkAnimation.SetBool("Walking", false); // Set the IsMoving parameter to false
+        }
 
         //add our input to our velocity
         //This provides accelleration +10m/s/s
@@ -129,6 +160,13 @@ public class PlayerMovement : MonoBehaviour
 
         //Now we can move with the rigidbody and we get propper collisions
         rb2D.velocity = new Vector2(velocityX, rb2D.velocity.y);
+
+        //test
+        if (!onGround)
+        {
+            float extraAirMovement = 2.0f; // You can adjust this value
+            rb2D.AddForce(Vector2.right * x * extraAirMovement);
+        }
     }
 
     public Vector3 GetPosition()
@@ -198,6 +236,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
         
+    }
+    void createSplash()
+    {
+        watersplash.Play();
     }
 
     
