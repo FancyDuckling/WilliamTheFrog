@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 2.0f;  // Speed of movement
-    public float minChangeInterval = 1.0f; // Minimum time before changing direction
-    public float maxChangeInterval = 4.0f; // Maximum time before changing direction
+    public float minChangeInterval = 10.0f; // Minimum time before changing direction
+    public float maxChangeInterval = 15.0f; // Maximum time before changing direction
     private float changeDirectionTimer; // Timer for changing direction
     private Vector3 initialPosition; // Initial position of the GameObject
     private float maxDistance; // Maximum distance to move in one direction
@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
-        maxDistance = Random.Range(1.0f, 5.0f); // Set an initial random distance
+        maxDistance = Random.Range(7.0f, 15.0f); // Set an initial random distance
         changeDirectionTimer = Random.Range(minChangeInterval, maxChangeInterval);
     }
 
@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
             movingRight = !movingRight;
 
             // Generate a new random distance
-            maxDistance = Random.Range(1.0f, 5.0f);
+            maxDistance = Random.Range(8.0f, 10.0f);
         }
 
         if (movingRight)
@@ -61,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
             movingRight = !movingRight;
 
             // Generate a new random distance
-            maxDistance = Random.Range(1.0f, 5.0f);
+            maxDistance = Random.Range(10.0f, 15.0f);
         }
 
 
