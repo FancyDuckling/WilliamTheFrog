@@ -8,6 +8,10 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position = player.transform.position + new Vector3(6f,3f,-10);
+        Vector3 newPosition = transform.position;
+        newPosition.x = player.transform.position.x + 6f; // Lock the camera to the player on the X-axis
+        transform.position = newPosition;
+
+        //transform.position = player.transform.position + new Vector3(6f,3f,-10);
     }
 }

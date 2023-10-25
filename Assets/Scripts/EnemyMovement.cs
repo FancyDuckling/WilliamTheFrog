@@ -36,6 +36,18 @@ public class EnemyMovement : MonoBehaviour
             maxDistance = Random.Range(1.0f, 5.0f);
         }
 
+        if (movingRight)
+        {
+            //Test
+            // Set the local scale to flip the character horizontally
+            transform.localScale = new Vector3(-1, 1, 1);
+
+        }
+        else 
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
         // Calculate movement
         Vector3 movement = Vector3.right * (movingRight ? 1 : -1) * moveSpeed * Time.deltaTime;
 
@@ -51,6 +63,8 @@ public class EnemyMovement : MonoBehaviour
             // Generate a new random distance
             maxDistance = Random.Range(1.0f, 5.0f);
         }
+
+
     }
 
 }

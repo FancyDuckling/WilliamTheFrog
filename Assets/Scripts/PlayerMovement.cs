@@ -141,6 +141,13 @@ public class PlayerMovement : MonoBehaviour
 
         //Now we can move with the rigidbody and we get propper collisions
         rb2D.velocity = new Vector2(velocityX, rb2D.velocity.y);
+
+        //test
+        if (!onGround)
+        {
+            float extraAirMovement = 2.0f; // You can adjust this value
+            rb2D.AddForce(Vector2.right * x * extraAirMovement);
+        }
     }
 
     public Vector3 GetPosition()
