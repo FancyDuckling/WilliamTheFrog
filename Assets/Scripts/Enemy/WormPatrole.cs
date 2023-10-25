@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class fake : MonoBehaviour
+public class WormPatrole : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;

@@ -24,7 +24,12 @@ public class DestroyFly : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(fly);
-        manager.AddPoint(); // hänvisa till Game manager script, skapa en AddPoint function
+        if (collision.gameObject.CompareTag("fly"))
+        {
+            Destroy(collision.gameObject);
+            manager.AddPoint(); // hänvisa till Game manager script, skapa en AddPoint function
+
+        }
+        
     }
 }
