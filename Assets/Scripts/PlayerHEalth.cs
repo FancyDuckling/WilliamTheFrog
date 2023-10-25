@@ -25,10 +25,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
-        {
-            FrogTakeDamage();
-        }
+        //if(other.gameObject.CompareTag("Enemy"))
+        //{
+        //    FrogTakeDamage();
+        //}
     }
 
     void FrogTakeDamage()
