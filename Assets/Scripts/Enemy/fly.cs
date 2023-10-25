@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class fly : MonoBehaviour
 {
+    //public SpriteRenderer spriteRenderer;
     public bool isMoving = true;
     public bool isBobbingBig = true;
     public bool isBobbingSmall = true;
