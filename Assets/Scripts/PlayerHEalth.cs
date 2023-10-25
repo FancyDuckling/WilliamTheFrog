@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health = 3;
-    public Image[] heartImage;
+    private static float health = 3;
+    public static Image[] heartImage;
     public bool canTakeDamage = true;
 
     private void Start()
@@ -36,11 +37,13 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine("InvincibilityTime");
         StartCoroutine("FreeazeFrames");
         health--;
+        
         UpdateHealth();
       
         if (health == 0)
         {
             Debug.Log("you are dead");
+          
         }
 
     }
@@ -74,6 +77,12 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.2f);
         Time.timeScale = 1;
 
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+        
     }
 
 }
