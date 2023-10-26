@@ -1015,8 +1015,8 @@ SpriteShapeRenderer:
   m_ShapeTexture: {fileID: 0}
   m_Sprites: []
   m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: 3.3631878, y: 0, z: 0}
+    m_Extent: {x: 5.363188, y: 0, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &68481154
 Transform:
@@ -8051,8 +8051,8 @@ SpriteShapeRenderer:
   m_ShapeTexture: {fileID: 0}
   m_Sprites: []
   m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: 12.131454, y: 0.03159237, z: 0}
+    m_Extent: {x: 14.131454, y: 0.03159237, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &432480460
 Transform:
@@ -15606,8 +15606,8 @@ SpriteShapeRenderer:
   m_ShapeTexture: {fileID: 0}
   m_Sprites: []
   m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Center: {x: 2.101097, y: -0.06525135, z: 0}
+    m_Extent: {x: 4.6231003, y: 0.013051033, z: 0}
   m_SpriteSortPoint: 0
 --- !u!4 &873169318
 Transform:
@@ -22992,7 +22992,7 @@ Transform:
   m_GameObject: {fileID: 1466337765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 443.1, y: 33.07, z: 0}
+  m_LocalPosition: {x: 443.2, y: 33.07, z: 0}
   m_LocalScale: {x: 1.5922, y: 1.5922, z: 1.5922}
   m_ConstrainProportionsScale: 0
   m_Children: []
