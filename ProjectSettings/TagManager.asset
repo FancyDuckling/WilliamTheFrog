@@ -52,6 +52,15 @@ TagManager:
   - name: Tree middle
     uniqueID: 392625057
     locked: 0
+  - name: Tree foregound
+    uniqueID: 971690745
+    locked: 0
+  - name: Tree closer
+    uniqueID: 3650938629
+    locked: 0
+  - name: Vines
+    uniqueID: 3723194151
+    locked: 0
   - name: Background
     uniqueID: 4144082205
     locked: 0
