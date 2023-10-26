@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    public Canvas creditsCanvas;
+    //public Canvas creditsCanvas;
 
     public void Play()
     {
@@ -28,5 +28,10 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
         //creditsCanvas.gameObject.SetActive(false); // Disable the Canvas
+    }
+
+    public void ToMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

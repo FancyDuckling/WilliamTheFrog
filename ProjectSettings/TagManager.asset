@@ -8,6 +8,7 @@ TagManager:
   - grapplePlatform
   - fly
   - spike
+  - Enemy
   layers:
   - Default
   - TransparentFX
