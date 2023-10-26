@@ -42,6 +42,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: UI background
+    uniqueID: 3828892725
+    locked: 0
+  - name: Tree back
+    uniqueID: 4122943121
+    locked: 0
+  - name: Tree middle
+    uniqueID: 392625057
+    locked: 0
   - name: Background
     uniqueID: 4144082205
     locked: 0
@@ -59,4 +68,7 @@ TagManager:
     locked: 0
   - name: foreground
     uniqueID: 3831045017
+    locked: 0
+  - name: New Layer 7
+    uniqueID: 761197097
     locked: 0
