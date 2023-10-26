@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -113,10 +113,10 @@ TextureImporter:
       name: Ground filler edge piece repeatable_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 6
-        height: 5
+        x: 68
+        y: 68
+        width: 863
+        height: 502
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Ground filler edge piece repeatable_1
       rect:
         serializedVersion: 2
-        x: 266
-        y: 2
-        width: 586
-        height: 604
+        x: 106
+        y: 565
+        width: 11
+        height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Ground filler edge piece repeatable_2
       rect:
         serializedVersion: 2
-        x: 508
-        y: 0
-        width: 24
-        height: 5
+        x: 138
+        y: 564
+        width: 39
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Ground filler edge piece repeatable_3
       rect:
         serializedVersion: 2
-        x: 550
-        y: 0
-        width: 46
-        height: 25
+        x: 0
+        y: 137
+        width: 6
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,6 +189,153 @@ TextureImporter:
       bones: []
       spriteID: d03debb1ae1597944838e99806f3d7f9
       internalID: -1553975193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_4
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 61
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4462254fb1cc84a458d6ae561ea5b88b
+      internalID: 438597007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 33
+        width: 22
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a9f47d5dd3a7e4ea08c3821a71fcee
+      internalID: -1219299474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_6
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 7
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025391f59ba745f4c860d3944ba0665e
+      internalID: 971236225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_7
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 0
+        width: 45
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2968dee58618e4fab0c80202ca78fa
+      internalID: 740604681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_8
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 18
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bd7b333b0ba6e49bd5fcb245415c20
+      internalID: 593280259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_9
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 8
+        width: 21
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f02ab6710c8a544794a265cd5fe2674
+      internalID: -1247497399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground filler edge piece repeatable_10
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 4
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237d1a53c3c631b49b7ae9fb0006d02f
+      internalID: 61937243
       vertices: []
       indices: 
       edges: []
@@ -206,8 +353,15 @@ TextureImporter:
     nameFileIdTable:
       Ground filler edge piece repeatable_0: 1656538974
       Ground filler edge piece repeatable_1: 1029941892
+      Ground filler edge piece repeatable_10: 61937243
       Ground filler edge piece repeatable_2: -1717111301
       Ground filler edge piece repeatable_3: -1553975193
+      Ground filler edge piece repeatable_4: 438597007
+      Ground filler edge piece repeatable_5: -1219299474
+      Ground filler edge piece repeatable_6: 971236225
+      Ground filler edge piece repeatable_7: 740604681
+      Ground filler edge piece repeatable_8: 593280259
+      Ground filler edge piece repeatable_9: -1247497399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
