@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float velocityX; //Our current velocity
 
     [Header("Jump")]
-    public float jumpPower = 8; //How strong our jump is
+    public float jumpPower = 12; //How strong our jump is
     public float groundCheckDistance = 0.1f; //how far outsie our character we should raycast
     
 
@@ -35,12 +35,16 @@ public class PlayerMovement : MonoBehaviour
     //walk animation
     public Animator walkAnimation;
 
-    
+    //sound
+    public AudioClip jumpSound;
+    public AudioClip grappleSound;
+
+    private AudioSource audioSource;
 
 
     private void Start()
     {
-       
+        audioSource = GetComponent<AudioSource>();
 
         //Change project setting for raycast since they start inside colliders
         Physics2D.queriesStartInColliders = false;
@@ -96,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
             //createSplash();
-           
+            PlaySound(jumpSound);
 
         }
 
@@ -211,8 +215,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //om vi grapplar
+        PlaySound(grappleSound);
         lineRend.enabled=true;
         distJoint.enabled=true;
+        
 
         distJoint.connectedBody = selectedUpperPlatform.GetComponent<Rigidbody2D>();
 
@@ -256,9 +262,16 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    
+    private void PlaySound(AudioClip soundClip)
+    {
+        if (soundClip != null)
+        {
+            audioSource.clip = soundClip;
+            audioSource.Play();
+        }
+    }
 
-    
+
     //void createSplash()
     //{
     //    watersplash.Play();

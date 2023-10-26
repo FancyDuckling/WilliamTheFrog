@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Find the TextMeshProUGUI object by name (adjust the name as needed)
-        //flyScoreText = GameObject.Find("FlyScoreText").GetComponent<TextMeshProUGUI>();
-        //wurmScoreText = GameObject.Find("WurmScoreText").GetComponent<TextMeshProUGUI>();
+        flyScoreText = GameObject.Find("FlyScoreText").GetComponent<TextMeshProUGUI>();
+        wurmScoreText = GameObject.Find("WurmScoreText").GetComponent<TextMeshProUGUI>();
         
 
         // Update the score display initially

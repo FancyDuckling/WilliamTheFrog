@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Music : MonoBehaviour
+public class WalkingSound : MonoBehaviour
 {
-    public AudioClip jumpSound;
-    public AudioClip grapplingSound;
+   
     public AudioClip walkSound;
+    public AudioClip jumpSound;
+    
 
     private AudioSource audioSource;
     private bool isWalking;
+    private bool isJumping;
 
     private void Start()
     {
@@ -27,20 +29,30 @@ public class Music : MonoBehaviour
             if (!isWalking)
             {
                 PlaySound(walkSound);
+                audioSource.loop = true;
                 isWalking = true;
             }
-        }
-
-        else if (Input.GetButtonDown("Jump"))
-        {
-            PlaySound(jumpSound);
         }
 
         else
         {
             isWalking = false;
-            audioSource.Stop();
+            audioSource.loop = false;
+
         }
+
+        if (!isJumping)
+        {
+            
+            PlaySound(jumpSound); 
+            isJumping = true;
+        }
+        
+        else
+        {
+            isJumping= false;
+        }
+
     }
 
     private void PlaySound(AudioClip soundClip)
@@ -51,4 +63,6 @@ public class Music : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    
 }
