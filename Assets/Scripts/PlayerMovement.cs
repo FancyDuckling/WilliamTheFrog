@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public ParticleSystem watersplash;
+    //public ParticleSystem watersplash;
     [Header("Movement")]
     public float maxSpeed = 5; //Our max speed
     public float acceleration = 20; //How fast we accelerate
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
             var velocity = rb2D.velocity;
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
-            createSplash();
+            //createSplash();
             
         }
 
@@ -237,10 +237,10 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    void createSplash()
-    {
-        watersplash.Play();
-    }
+    //void createSplash()
+    //{
+    //    watersplash.Play();
+    //}
 
     
 }

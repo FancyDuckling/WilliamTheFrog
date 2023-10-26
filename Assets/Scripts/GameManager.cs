@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void AddPoint()
     {
-            scorePlayer++;
+            scorePlayer+=2;
             SetScore(scorePlayer);
     }
 
