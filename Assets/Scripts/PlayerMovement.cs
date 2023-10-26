@@ -30,14 +30,18 @@ public class PlayerMovement : MonoBehaviour
     private DistanceJoint2D distJoint;
     private GrapplingPoint selectedUpperPlatform;
     private float catchFlySpeed = 20;
+    
 
     //walk animation
     public Animator walkAnimation;
 
+    
 
 
     private void Start()
     {
+       
+
         //Change project setting for raycast since they start inside colliders
         Physics2D.queriesStartInColliders = false;
 
@@ -66,8 +70,8 @@ public class PlayerMovement : MonoBehaviour
         GravityAdjust(); //adjusts gravity
 
         GrapplingBehaviourPlatform(); //platform grapple
- 
 
+        
     }
 
     private void GravityAdjust()
@@ -92,7 +96,8 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpPower;
             rb2D.velocity = velocity;
             //createSplash();
-            
+           
+
         }
 
         if (Input.GetButtonUp("Jump") && rb2D.velocity.y > 0)
@@ -116,25 +121,30 @@ public class PlayerMovement : MonoBehaviour
     {
         //Get the raw input
         float x = Input.GetAxisRaw("Horizontal");
-
+        
 
         // Flip the character if moving to the left
         if (x < 0)
         {
             // Set the local scale to flip the character horizontally
             transform.localScale = new Vector3(-1, 1, 1);
+            
         }
         // Reset the character's scale when moving right
         else if (x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            
         }
 
         if (x != 0)
         {
             // Player is moving horizontally
+            
             velocityX += x * acceleration * Time.deltaTime;
             walkAnimation.SetBool("Walking", true); // Set the IsMoving parameter to true
+            
+
         }
         else
         {
@@ -167,6 +177,9 @@ public class PlayerMovement : MonoBehaviour
             float extraAirMovement = 2.0f; // You can adjust this value
             rb2D.AddForce(Vector2.right * x * extraAirMovement);
         }
+
+        
+
     }
 
     public Vector3 GetPosition()
@@ -212,7 +225,7 @@ public class PlayerMovement : MonoBehaviour
 
             //test
             // Check if the selected object has the "fly" tag
-            if (selectedUpperPlatform.CompareTag("fly"))
+            if (selectedUpperPlatform.CompareTag("fly") || selectedUpperPlatform.CompareTag("worm"))
             {
                 // Move the object towards the player
                 // Calculate the direction from the object to the player
@@ -223,9 +236,11 @@ public class PlayerMovement : MonoBehaviour
                
 
                 selectedUpperPlatform.transform.position += direction * speed * Time.deltaTime;
-
                 
             }
+
+  
+
             else
             {
                 // Move the player towards the object
@@ -234,15 +249,22 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = targetPosition;
             }
 
+
+      
+
         }
-        
+
     }
+
+    
+
+    
     //void createSplash()
     //{
     //    watersplash.Play();
     //}
 
-    
+
 }
 
 

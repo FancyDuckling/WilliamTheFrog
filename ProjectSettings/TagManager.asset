@@ -9,6 +9,7 @@ TagManager:
   - fly
   - spike
   - Enemy
+  - worm
   layers:
   - Default
   - TransparentFX
