@@ -38,6 +38,7 @@ public class WalkingSound : MonoBehaviour
         {
             isWalking = false;
             audioSource.loop = false;
+            PauseSound(walkSound);
 
         }
 
@@ -62,6 +63,11 @@ public class WalkingSound : MonoBehaviour
             audioSource.clip = soundClip;
             audioSource.Play();
         }
+    }
+
+    private void PauseSound(AudioClip soundClip)
+    {
+        audioSource.Pause();
     }
 
     

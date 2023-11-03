@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     private float health = 3;
-    public Image[] heartImage;
+    public SpriteRenderer[] heartImage;
     public bool canTakeDamage = true;
     public Transform respawnPoint;
 
     private void Start()
     {
         
-       // UpdateHealth();
+      UpdateHealth();
     }
 
     public void Update()
@@ -28,10 +28,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //if(other.gameObject.CompareTag("Enemy"))
-        //{
-        //    FrogTakeDamage();
-        //}
+        if(other.gameObject.CompareTag("Enemy"))
+        {
+             FrogTakeDamage();
+        }
     }
 
     void FrogTakeDamage()
@@ -44,8 +44,8 @@ public class PlayerHealth : MonoBehaviour
       
         if (health == 0)
         {
-            Debug.Log("you are dead");
-          
+            SceneManager.LoadScene("Game Over");
+
         }
 
     }
